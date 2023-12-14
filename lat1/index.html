@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div>
+    <button onclick="sortAlphabet()">Sort Alphabet</button>
+    <button onclick="sortRandomAlphabet()">Sort Random Alphabet</button>
+    <button onclick="sortRandom()">Sort Random</button>
+    <button onclick="sortNumeric()">Sort Numeric</button>
+    <button onclick="sortRandomNumeric()">Sort Random Numeric</button>
+    
+    <h1 id="abc"></h1>
+    <h1 id="points"></h1>
+ </div>
+ 
+ <script>
+const points =[100,1,2,7,5,90]
+const abc =["dea","susi","gibson","ele","zaza","yuyi"]
+document.getElementById("points").innerHTML = points
+document.getElementById("abc").innerHTML = abc
+
+function sortAlphabet(){
+    abc.sort()
+    document.getElementById("abc").innerHTML = abc
+}
+
+function sortNumeric(){
+    points.sort((a,b) => a-b)
+    document.getElementById("points").innerHTML = points
+}
+
+function sortRandomAlphabet(){
+    // Fungsi untuk mengacak elemen-elemen dalam array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArray(abc);
+    document.getElementById("abc").innerHTML = abc;
+}
+
+function sortRandomNumeric(){
+    // Fungsi untuk mengacak elemen-elemen dalam array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArray(points);
+    document.getElementById("points").innerHTML = points;
+}
+
+function sortRandom(){
+    // Fungsi untuk mengacak elemen-elemen dalam array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArray(abc);
+    shuffleArray(points);
+
+    document.getElementById("abc").innerHTML = abc;
+    document.getElementById("points").innerHTML = points;
+}
+ </script>
+ 
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gaji Karyawan</title>
+    <link rel="stylesheet" type="text/css" href="stylegaji.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Gaji Karyawan</h1>
+        
+        <div id="result" class="receipt">
+            <p class="receipt-title">Struk Gaji</p>
+            <p class="receipt-line">--------------------------------</p>
+            <p class="receipt-entry">Gaji Dasar: <span id="basicSalaryResult">$0.00</span></p>
+            <p class="receipt-entry">Bonus: <span id="bonusResult">$0.00</span></p>
+            <p class="receipt-entry">Potongan: <span id="deductionsResult">$0.00</span></p>
+            <p class="receipt-line">--------------------------------</p>
+            <p class="receipt-entry">Gaji Bersih: <span id="netSalaryResult">$0.00</span></p>
+        </div>
+
+        <button onclick="calculateSalary()">Hitung Gaji</button>
+    </div>
+
+    <script src="kalkulatorgaji.js"></script>
+</body>
+</html>

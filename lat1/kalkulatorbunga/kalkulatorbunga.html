@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Bunga Tabungan</title>
+</head>
+<body>
+    <h1>Kalkulator Bunga Tabungan</h1>
+    
+    <label for="initialSavings">Masukkan jumlah tabungan awal: $</label>
+    <input type="number" id="initialSavings"><br><br>
+    
+    <label for="interestRate">Masukkan tingkat bunga tahunan (%): </label>
+    <input type="number" id="interestRate"><br><br>
+    
+    <label for="savingPeriod">Masukkan periode simpanan dalam tahun: </label>
+    <input type="number" id="savingPeriod"><br><br>
+    
+    <button onclick="calculateSavings()">Hitung</button><br><br>
+    
+    <div id="result"></div>
+
+    <script>
+        function calculateSavings() {
+            let initialSavings = parseFloat(document.getElementById("initialSavings").value);
+            let interestRate = parseFloat(document.getElementById("interestRate").value);
+            let savingPeriod = parseInt(document.getElementById("savingPeriod").value);
+
+            if (isNaN(initialSavings) || isNaN(interestRate) || isNaN(savingPeriod)) {
+                alert("Masukkan harus berupa angka.");
+                return;
+            }
+
+            let interest = (initialSavings * interestRate * savingPeriod) / 100;
+            let totalSavings = initialSavings + interest;
+
+            let resultHTML = `
+                <p>Jumlah tabungan awal :$ ${initialSavings.toFixed(2)}</p>
+                <p>Tingkat bunga tahunan: ${interestRate}%</p>
+                <p>Periode simpanan: ${savingPeriod} tahun</p>
+                <p>Bunga yang diperoleh: $ ${interest.toFixed(2)}</p>
+                <p>Total tabungan akhir: $ ${totalSavings.toFixed(2)}</p>
+            `;
+
+            document.getElementById("result").innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <input type="text" id="inputField" placeholder="Masukkan angka">
+    <button onclick="hitung()">Hitung</button>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script src="kalkulator.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator JavaScript</title>
+</head>
+<body>
+    <h2>Kalkulator JavaScript</h2>
+    <input type="text" id="input1" placeholder="Masukkan angka pertama">
+    <select id="operator">
+        <option value="tambah">+</option>
+        <option value="kali">x</option>
+    </select>
+    <input type="text" id="input2" placeholder="Masukkan angka kedua">
+    <button onclick="hitung()">Hitung</button>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        function hitung() {
+            // Mengambil nilai dari input
+            var angka1 = parseFloat(document.getElementById("input1").value);
+            var angka2 = parseFloat(document.getElementById("input2").value);
+            var operator = document.getElementById("operator").value;
+
+            // Melakukan operasi penambahan atau perkalian sesuai operator yang dipilih
+            var hasil;
+            if (operator === "tambah") {
+                hasil = angka1 + angka2;
+            } else if (operator === "kali") {
+                hasil = angka1 * angka2;
+            }
+
+            // Menampilkan hasil ke elemen HTML
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Dua Angka</title>
+</head>
+<body>
+    <h1>Kalkulator Dua Angka</h1>
+    <input type="number" id="angka1" placeholder="Angka pertama">
+    <input type="number" id="angka2" placeholder="Angka kedua">
+    <select id="operator">
+        <option value="tambah">Tambah</option>
+        <option value="kurang">Kurang</option>
+        <option value="kali">Kali</option>
+        <option value="bagi">Bagi</option>
+    </select>
+    <button onclick="hitung()">Hitung</button>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        function hitung() {
+            // Ambil input dari pengguna
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            var operator = document.getElementById("operator").value;
+
+            // Validasi input
+            if (isNaN(angka1) || isNaN(angka2)) {
+                alert("Masukkan dua angka terlebih dahulu");
+                return;
+            }
+
+            // Melakukan kalkulasi
+            var hasil;
+            switch (operator) {
+                case 'tambah':
+                    hasil = angka1 + angka2;
+                    break;
+                case 'kurang':
+                    hasil = angka1 - angka2;
+                    break;
+                case 'kali':
+                    hasil = angka1 * angka2;
+                    break;
+                case 'bagi':
+                    if (angka2 === 0) {
+                        alert("Tidak dapat membagi oleh nol");
+                        return;
+                    }
+                    hasil = angka1 / angka2;
+                    break;
+                default:
+                    alert("Operator tidak valid");
+                    return;
+            }
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+</body>
+</html>

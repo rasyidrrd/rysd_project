@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gaji Karyawan</title>
+</head>
+<body>
+    <h1>Kalkulator Gaji Karyawan</h1>
+    
+    <label for="basicSalary">Masukkan gaji dasar karyawan: $</label>
+    <input type="number" id="basicSalary"><br><br>
+    
+    <label for="bonus">Masukkan jumlah bonus: $</label>
+    <input type="number" id="bonus"><br><br>
+    
+    <label for="deductions">Masukkan jumlah potongan: $</label>
+    <input type="number" id="deductions"><br><br>
+    
+    <button onclick="calculateSalary()">Hitung</button><br><br>
+    
+    <div id="result"></div>
+
+    <script>
+        function calculateSalary() {
+            let basicSalary = parseFloat(document.getElementById("basicSalary").value);
+            let bonus = parseFloat(document.getElementById("bonus").value);
+            let deductions = parseFloat(document.getElementById("deductions").value);
+
+            if (isNaN(basicSalary) || isNaN(bonus) || isNaN(deductions)) {
+                alert("Masukkan harus berupa angka.");
+                return;
+            }
+
+            let netSalary = basicSalary + bonus - deductions;
+
+            let resultHTML = `
+                <p>Gaji dasar karyawan:  $ ${basicSalary.toFixed(2)}</p>
+                <p>Bonus:  $ ${bonus.toFixed(2)}</p>
+                <p>Potongan: $ ${deductions.toFixed(2)}</p>
+                <p>Gaji bersih: $ ${netSalary.toFixed(2)}</p>
+            `;
+
+            document.getElementById("result").innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>

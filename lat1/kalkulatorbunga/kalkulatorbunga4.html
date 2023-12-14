@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Bunga Tabungan</title>
+    <link rel="stylesheet" type="text/css" href="script.css">
+</head>
+<body>
+    <header>
+        <h1>Kalkulator Bunga Tabungan</h1>
+    </header>
+
+    <div class="container">
+        <button onclick="showCustomDialog()">Hitung</button><br><br>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <!-- Jendela dialog kustom -->
+    <div class="custom-dialog-background" id="customDialog" >
+        <div class="custom-dialog">
+            <h2>Masukkan Data</h2>
+            <input type="number" class="dialog-input" id="initialSavings" placeholder="Jumlah tabungan awal">
+            <input type="number" class="dialog-input" id="interestRate" placeholder="Tingkat bunga tahunan">
+            <input type="number" class="dialog-input" id="savingPeriod" placeholder="Periode simpanan (tahun)">
+            <button class="dialog-button" onclick="calculateSavingsFromDialog()">Hitung</button>
+        </div>
+    </div>
+
+    <script src="kalkulatorbunga4.js"></script>
+</body>
+</html>
